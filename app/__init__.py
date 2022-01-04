@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_moment import Moment
 # from flask_cors import CORS
+import logging
 
 
 db = SQLAlchemy()
@@ -19,6 +20,9 @@ def create_app(config_class=Config):
     migrate.init_app(app,db)
     moment.init_app(app)
     # cors.init_app(app)
+    
+    app.logger.addHandler(logging.StreamHandler())
+    app.logger.setLevel(logging.ERROR)
 
     @app.route('/')
     def serve():
