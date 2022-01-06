@@ -34,7 +34,7 @@ def create_app(config_class=Config):
 
     @app.route("/favicon.ico")
     def favicon():
-        return "", 200
+      return "", 200
 
     from .blueprints.auth import bp as auth_bp
     app.register_blueprint(auth_bp)
