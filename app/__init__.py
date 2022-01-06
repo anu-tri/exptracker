@@ -24,7 +24,7 @@ def create_app(config_class=Config):
     # app.logger.addHandler(logging.StreamHandler())
     # app.logger.setLevel(logging.ERROR)
 
-    @app.route('/')
+    @app.route('/login')
     def serve():
         return send_from_directory(app.static_folder,'index.html')
 
