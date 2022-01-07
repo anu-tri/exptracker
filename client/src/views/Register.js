@@ -46,6 +46,10 @@ export default class Register extends Component {
                 console.log("Error creating user : ", response.error);
             }
         })
+        .catch(error=>{
+            this.setState({error:error});
+            console.log('Register Error: ', error);
+        })
     }
 
 

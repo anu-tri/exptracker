@@ -43,10 +43,8 @@ export default class NavBar extends Component {
                                 </>
                             :
                             <>
-                                {/* <Nav.Link as={Link} to="/login" style={{color:"black"}}>Login</Nav.Link> */}
-                                <Nav.Link href="/login" style={{color:"black"}}>Login</Nav.Link> 
-                                <Nav.Link href="/register" style={{color:"black"}}>Register</Nav.Link>
-                                {/* <Nav.Link as={Link} to="/register" style={{color:"black"}}>Register</Nav.Link> */}
+                                <Nav.Link as={Link} to="/login" style={{color:"black"}}>Login</Nav.Link>
+                                <Nav.Link as={Link} to="/register" style={{color:"black"}}>Register</Nav.Link>
                             </>
                             }
                      </Nav>
