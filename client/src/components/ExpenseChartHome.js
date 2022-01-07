@@ -20,7 +20,7 @@ export default class IncomeChartHome extends Component {
   }
 
   getAllCats = async()=>{
-    await axios.get(`http://127.0.0.1:5000/category`)
+    await axios.get(`https://expense-tracker-tool.herokuapp.com/category`)
     .then(response=>{
     this.setState({categories:response.data.category}, ()=>console.log("fetched all categories"), console.log(response.data));
     })
@@ -38,7 +38,7 @@ export default class IncomeChartHome extends Component {
   
   getChartData=()=>{
     //Expenses
-    axios.get(`http://127.0.0.1:5000/expense/user/${localStorage.getItem('currentUserId')}`)
+    axios.get(`https://expense-tracker-tool.herokuapp.com/expense/user/${localStorage.getItem('currentUserId')}`)
     .then(res => {
    
     //Sum of amount for a specific category(i.e getting sum of amount for a category,...)  

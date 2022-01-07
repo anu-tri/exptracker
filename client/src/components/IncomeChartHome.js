@@ -18,7 +18,7 @@ export default class IncomeChartHome extends Component {
     let savings = [];
 
     //Budget
-    axios.get(`http://127.0.0.1:5000/income/user/${localStorage.getItem('currentUserId')}`)
+    axios.get(`https://expense-tracker-tool.herokuapp.com/income/user/${localStorage.getItem('currentUserId')}`)
     .then(res => {
      for(let i=0; i<res.data.incomes.length; i++)
       {
@@ -29,7 +29,7 @@ export default class IncomeChartHome extends Component {
      });
 
      //Expenses
-     axios.get(`http://127.0.0.1:5000/expense/user/${localStorage.getItem('currentUserId')}`)
+     axios.get(`https://expense-tracker-tool.herokuapp.com/expense/user/${localStorage.getItem('currentUserId')}`)
      .then(res => {
      //Sum of amount for a specific month(i.e getting sum of amount for all jan,...)  
      const result = Array.from(res.data.expenses.reduce(
@@ -60,7 +60,6 @@ export default class IncomeChartHome extends Component {
     expensedatachart = JSON.parse(localStorage.getItem('expensedata'))
 
     if ((budgetdatachart != null ) && (expensedatachart != null )) {
-      // alert("innNNNNNN")
       for(let i = 0;i<=budgetdatachart.length-1;i++){
         savings.push((budgetdatachart[i]) - (expensedatachart[i]));
       }

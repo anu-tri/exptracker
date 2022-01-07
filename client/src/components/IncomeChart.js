@@ -23,7 +23,7 @@ export default class IncomeChart extends Component {
 
 
     //Budget
-    axios.get(`http://127.0.0.1:5000/income/user/${localStorage.getItem('currentUserId')}`)
+    axios.get(`https://expense-tracker-tool.herokuapp.com/income/user/${localStorage.getItem('currentUserId')}`)
     .then(res => {
      for(let i=0; i<res.data.incomes.length; i++)
       {
@@ -38,7 +38,7 @@ export default class IncomeChart extends Component {
   // });
 
      //Expenses
-     axios.get(`http://127.0.0.1:5000/expense/user/${localStorage.getItem('currentUserId')}`)
+     axios.get(`https://expense-tracker-tool.herokuapp.com/expense/user/${localStorage.getItem('currentUserId')}`)
      .then(res => {
     
      //Sum of amount for a specific month(i.e getting sum of amount for all jan,...)  
