@@ -34,14 +34,14 @@ export default class EditExpense extends Component {
     }
 
     getAllCats = async()=>{
-        await axios.get(`http://127.0.0.1:5000/category`)
+        await axios.get(`https://expense-tracker-tool.herokuapp.com/category`)
         .then(response=>{
         this.setState({categories:response.data.category}, ()=>console.log("fetched all categories"), console.log(response.data));
         })
     }
 
     getExpense=async()=>{
-        await axios.get(`http://127.0.0.1:5000/expense/${this.props.match.params.id}`)
+        await axios.get(`https://expense-tracker-tool.herokuapp.com/expense/${this.props.match.params.id}`)
         .then(response=>{
             this.setState({expense:response.data}, ()=>console.log("fetched expense"),console.log(response.data));
         });
@@ -62,7 +62,7 @@ export default class EditExpense extends Component {
         month = this.state.month?this.state.month:this.state.expense.month
         category_id = this.state.cat_id?this.state.cat_id:this.state.expense.category_id
         alert(id+amount+month+category_id+description)
-        axios.put(`http://127.0.0.1:5000/expense/${id}`, {
+        axios.put(`https://expense-tracker-tool.herokuapp.com/expense/${id}`, {
             amount:amount,
             month:month,
             description:description,

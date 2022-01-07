@@ -31,7 +31,7 @@ export default class CreateCats extends Component {
 
     handleSubmit= async({name, description})=>{
         
-        await axios.post(`http://127.0.0.1:5000/category`, {
+        await axios.post(`https://expense-tracker-tool.herokuapp.com/category`, {
             name:name,
             description:description
         })

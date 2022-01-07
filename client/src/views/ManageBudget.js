@@ -26,7 +26,7 @@ export default class ManageBudget extends Component {
 
     //get all categories
     getIncomes = async() => {
-        axios.get(`http://127.0.0.1:5000/income/user/${localStorage.getItem('currentUserId')}`)
+        axios.get(`https://expense-tracker-tool.herokuapp.com/income/user/${localStorage.getItem('currentUserId')}`)
        .then(response=>{
         this.setState({budgets:response.data.incomes}, ()=>console.log("fetched all budgets"), console.log(response.data));
         })
@@ -37,7 +37,7 @@ export default class ManageBudget extends Component {
     };
        
     deletebudget = async(id) => {
-        axios.delete(`http://127.0.0.1:5000/income/${id}`)
+        axios.delete(`https://expense-tracker-tool.herokuapp.com/income/${id}`)
         .then(response=>{
             this.setState({successfulDelete:true}, ()=>console.log("deleted budget"));
          })

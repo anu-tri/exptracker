@@ -26,7 +26,7 @@ export default class ManageCats extends Component {
 
     //get all categories
     getCategory = async() => {
-        axios.get('http://127.0.0.1:5000/category')
+        axios.get('https://expense-tracker-tool.herokuapp.com/category')
        .then(response=>{
         this.setState({categories:response.data.category}, ()=>console.log("fetched all category"), console.log(response.data));
         })

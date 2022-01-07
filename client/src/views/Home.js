@@ -32,14 +32,14 @@ export default class Home extends Component {
     }
 
     getAllCats = async()=>{
-        await axios.get(`http://127.0.0.1:5000/category`)
+        await axios.get(`https://expense-tracker-tool.herokuapp.com/category`)
         .then(response=>{
         this.setState({categories:response.data.category}, ()=>console.log("fetched all categories"), console.log(response.data));
         })
     }
 
     getExpensesByUser = async(id)=>{
-        await axios.get(`http://127.0.0.1:5000/expense/user/`+id)
+        await axios.get(`https://expense-tracker-tool.herokuapp.com/expense/user/`+id)
         .then(response=>{
         this.setState({expenses:response.data.expenses}, ()=>console.log("fetched all expenses for the user"));
         })
@@ -50,7 +50,7 @@ export default class Home extends Component {
 
     //get all expenses by category
     getExpensesByCat = async(id)=>{
-        await axios.get(`http://127.0.0.1:5000/expense/category/${id}/user/${this.props.currentUserId}`)
+        await axios.get(`https://expense-tracker-tool.herokuapp.com/expense/category/${id}/user/${this.props.currentUserId}`)
         .then(response => {
             this.setState({expenses:response.data.expenses}, ()=>console.log("fetched all expenses for category."));
         })

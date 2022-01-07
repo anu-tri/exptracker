@@ -38,7 +38,7 @@ export default class CreateBudget extends Component {
 
     //get all incomes
     getIncomes = async() => {
-        axios.get(`http://127.0.0.1:5000/income/user/${localStorage.getItem('currentUserId')}`)
+        axios.get(`https://expense-tracker-tool.herokuapp.com/income/user/${localStorage.getItem('currentUserId')}`)
        .then(response=>{
         this.setState({incomes:response.data.incomes}, ()=>console.log("fetched all incomes"), console.log(response.data));
         })
@@ -51,11 +51,7 @@ export default class CreateBudget extends Component {
             alert("Please select a month")
             return
         }
-        // await axios.get(`http://127.0.0.1:5000/income/month/${this.state.month}`)
-        // .then(response => {
-        //      console.log("fetched income for month." + response.data);
-        // });
-       
+               
         for(let i=0; i<this.state.incomes.length;i++){
             if(this.state.incomes[i].month === this.state.month){
                 alert("Budget for this month already exists. Please modify it.")
@@ -63,7 +59,7 @@ export default class CreateBudget extends Component {
             }
         }
        
-        await axios.post(`http://127.0.0.1:5000/income`, {
+        await axios.post(`https://expense-tracker-tool.herokuapp.com/income`, {
             month:this.state.month,
             amount:amount,
             user_id:localStorage.getItem('currentUserId')

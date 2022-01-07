@@ -28,7 +28,7 @@ export default class EditBudget extends Component {
 
 
     getBudget=async()=>{
-        await axios.get(`http://127.0.0.1:5000/income/${this.props.match.params.id}`)
+        await axios.get(`https://expense-tracker-tool.herokuapp.com/income/${this.props.match.params.id}`)
         .then(response=>{
             this.setState({budget:response.data}, ()=>console.log("fetched budget item"),console.log(response.data));
         });
@@ -38,7 +38,7 @@ export default class EditBudget extends Component {
     handleSubmit=({month,amount}, id)=>{
         month = this.state.month?this.state.month:this.state.budget.month
                 
-        axios.put(`http://127.0.0.1:5000/income/${id}`, {
+        axios.put(`https://expense-tracker-tool.herokuapp.com/income/${id}`, {
             amount:amount,
             month:month,
             user_id:localStorage.getItem('currentUserId')

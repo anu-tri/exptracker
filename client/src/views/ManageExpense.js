@@ -29,14 +29,14 @@ export default class ManageExpense extends Component {
 
     //get all categories
     getExpenses = async() => {
-        axios.get(`http://127.0.0.1:5000/expense/user/${localStorage.getItem('currentUserId')}`)
+        axios.get(`https://expense-tracker-tool.herokuapp.com/expense/user/${localStorage.getItem('currentUserId')}`)
        .then(response=>{
         this.setState({expenses:response.data.expenses}, ()=>console.log("fetched all expenses"), console.log(response.data));
         })
    }
 
    getAllCats = async()=>{
-    await axios.get(`http://127.0.0.1:5000/category`)
+    await axios.get(`https://expense-tracker-tool.herokuapp.com/category`)
     .then(response=>{
     this.setState({categories:response.data.category}, ()=>console.log("fetched all categories"), console.log(response.data));
     })
@@ -57,7 +57,7 @@ export default class ManageExpense extends Component {
     };
        
     deleteexpense = async(id) => {
-        axios.delete(`http://127.0.0.1:5000/expense/${id}`)
+        axios.delete(`https://expense-tracker-tool.herokuapp.com/expense/${id}`)
         .then(response=>{
             this.setState({successfulDelete:true}, ()=>console.log("deleted expense"));
          })

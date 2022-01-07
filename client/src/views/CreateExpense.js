@@ -43,7 +43,7 @@ export default class CreateExpense extends Component {
     }
 
     getAllCats = async()=>{
-        await axios.get(`http://127.0.0.1:5000/category`)
+        await axios.get(`https://expense-tracker-tool.herokuapp.com/category`)
         .then(response=>{
         this.setState({categories:response.data.category}, ()=>console.log("fetched all categories"), console.log(response.data));
         })
@@ -63,7 +63,7 @@ export default class CreateExpense extends Component {
             return
         }
         
-        await axios.post(`http://127.0.0.1:5000/expense`, {
+        await axios.post(`https://expense-tracker-tool.herokuapp.com/expense`, {
             month:this.state.month,
             amount:amount,
             description:description,

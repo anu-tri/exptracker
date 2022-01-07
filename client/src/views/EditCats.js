@@ -24,7 +24,7 @@ export default class EditBudget extends Component {
     }
 
     getCategory=async()=>{
-        await axios.get(`http://127.0.0.1:5000/category/${this.props.match.params.id}`)
+        await axios.get(`https://expense-tracker-tool.herokuapp.com/category/${this.props.match.params.id}`)
         .then(response=>{
             this.setState({category:response.data}, ()=>console.log("fetched categry item"),console.log(response.data));
         });
@@ -32,7 +32,7 @@ export default class EditBudget extends Component {
     }
 
     handleSubmit=({name,description}, id)=>{
-        axios.put(`http://127.0.0.1:5000/category/${id}`, {
+        axios.put(`https://expense-tracker-tool.herokuapp.com/category/${id}`, {
             name:name,
             description:description
         })
