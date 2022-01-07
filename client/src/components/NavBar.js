@@ -19,14 +19,12 @@ export default class NavBar extends Component {
                             <>
                                 <Nav.Link as={Link} to="/" style={{color:"black", fontSize:"16px"}}>Home</Nav.Link>
                                 <Nav.Link as={Link} to="/logout" style={{color:"black", fontSize:"16px"}}>Logout</Nav.Link>
-                    
-
-                                
+                                                    
                                 <NavDropdown title="Category" id="basic-nav-dropdown" className="drop-down-menu" >
                                         <NavDropdown.Item as={Link} to="/createcategory" style={{ color:"#1F77F3"}}>Add Category</NavDropdown.Item>
                                         <NavDropdown.Item as={Link} to="/managecategory" style={{ color:"#1F77F3"}}>Manage Category</NavDropdown.Item>
                                 </NavDropdown>
-                            <NavDropdown title="Expense" id="basic-nav-dropdown" style={{fontColor:"#33ffd6"}}>
+                               <NavDropdown title="Expense" id="basic-nav-dropdown" style={{fontColor:"#33ffd6"}}>
                                     <NavDropdown.Item as={Link} to="/viewexpenses" style={{ color:"#1F77F3"}}>View Expense</NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to="/createexpenses" style={{ color:"#1F77F3"}}>Add Expense</NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to="/manageexpenses" style={{ color:"#1F77F3"}}>Manage Expense</NavDropdown.Item>
@@ -45,8 +43,10 @@ export default class NavBar extends Component {
                                 </>
                             :
                             <>
-                                <Nav.Link as={Link} to="/login" style={{color:"black"}}>Login</Nav.Link>
-                                <Nav.Link as={Link} to="/register" style={{color:"black"}}>Register</Nav.Link>
+                                {/* <Nav.Link as={Link} to="/login" style={{color:"black"}}>Login</Nav.Link> */}
+                                <Nav.Link href="/login" style={{color:"black"}}>Login</Nav.Link> 
+                                <Nav.Link href="/register" style={{color:"black"}}>Register</Nav.Link>
+                                {/* <Nav.Link as={Link} to="/register" style={{color:"black"}}>Register</Nav.Link> */}
                             </>
                             }
                      </Nav>
