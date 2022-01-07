@@ -3,7 +3,7 @@ import base64 from "base-64";
 
 const apiClient = (username, password) => create(
     {
-        baseURL: '',
+        baseURL: 'https://expense-tracker-tool.herokuapp.com',
         headers:{
             Authorization: "Basic " + base64.encode(username+":"+password)
     }
