@@ -30,7 +30,7 @@ export default class Register extends Component {
     }
     
     handleSubmit = ({firstname, lastname, username, password}) => {
-         axios.post("/user", {
+         axios.post("${window.location.hostname}:5000/user", {
             firstname:firstname,
             lastname:lastname,
             username:username,
