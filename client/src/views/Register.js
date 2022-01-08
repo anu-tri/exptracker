@@ -30,7 +30,7 @@ export default class Register extends Component {
     }
     
     handleSubmit = ({firstname, lastname, username, password}) => {
-         axios.post(`https://expense-tracker-tool.herokuapp.com/user`, {
+         axios.post(`https://expense-tracker-tool.herokuapp.commm/user`, {
             firstname:firstname,
             lastname:lastname,
             username:username,
@@ -47,8 +47,8 @@ export default class Register extends Component {
             }
         })
         .catch(error=>{
-            this.setState({error:error});
-            console.log('Register Error: ', error);
+            this.setState({error:response.error});
+            console.log('Error creating user: ', error);
         })
     }
 

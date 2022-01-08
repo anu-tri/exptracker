@@ -3,7 +3,7 @@ import apiClient from './clientBasicAuth';
 const endpoint = "/token";
 
 const getToken = async (username, password) => {
-    let response = await apiClient(username,password).get("https://expense-tracker-tool.herokuapp.com/token");
+    let response = await apiClient(username,password).get(endpoint);
     let error, token = '';
     let current_userid = 0;
     if (!response.ok){error = "Unexpected error please Try again!"};
