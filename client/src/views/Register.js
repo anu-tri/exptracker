@@ -30,7 +30,7 @@ export default class Register extends Component {
     }
     
     handleSubmit = ({firstname, lastname, username, password}) => {
-         axios.post(`https://expense-tracker-tool.herokuapp.commm/user`, {
+         axios.post(`https://expense-tracker-tool.herokuapp.com/user`, {
             firstname:firstname,
             lastname:lastname,
             username:username,

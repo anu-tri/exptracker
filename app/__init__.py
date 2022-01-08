@@ -4,22 +4,22 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_moment import Moment
-# from flask_cors import CORS
+from flask_cors import CORS
 # import logging
 
 
 db = SQLAlchemy()
 migrate = Migrate()
 moment = Moment()
-# cors = CORS()
+cors = CORS()
 
 def create_app(config_class=Config):
-    app = Flask(__name__, static_folder="../client/build", static_url_path='')
+    app = Flask(__name__, static_folder="../client/build", static_url_path='https://expense-tracker-tool.herokuapp.com')
     app.config.from_object(config_class)
     db.init_app(app)
     migrate.init_app(app,db)
     moment.init_app(app)
-    # cors.init_app(app)
+    cors.init_app(app)
     
     # app.logger.addHandler(logging.StreamHandler())
     # app.logger.setLevel(logging.ERROR)
