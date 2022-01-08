@@ -54,7 +54,7 @@ export default class Login extends Component {
         this.setState({ error: response.error });
         this.props.setToken(response.token);
         this.props.setCurrentUserId(response.current_userid);
-        // this.props.setUserName(username);
+        this.props.setUserName(username);
             
         if (response.token) {
           this.setState({ redirect: true });
