@@ -1,6 +1,7 @@
 {
   "name": "heroku-expense-tracker-react-flask",
   "version": "0.1.0",
+  "proxy": "https://expense-tracker-tool.herokuapp.com",
   "engines": {
     "node": "16.13.0"
   },
