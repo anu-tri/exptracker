@@ -14,7 +14,7 @@ moment = Moment()
 cors = CORS()
 
 def create_app(config_class=Config):
-    app = Flask(__name__, static_folder="../client/build")
+    app = Flask(__name__, static_folder="../client/build", static_url_path='')
     app.config.from_object(config_class)
     db.init_app(app)
     migrate.init_app(app,db)
@@ -43,3 +43,6 @@ def create_app(config_class=Config):
     app.register_blueprint(expense_bp)
 
     return app
+
+    if __name__ == "__main__":
+        app.run()
