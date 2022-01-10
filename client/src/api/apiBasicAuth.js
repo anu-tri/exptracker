@@ -4,6 +4,7 @@ const endpoint = "/token";
 
 const getToken = async (username, password) => {
     let response = await apiClient(username,password).get(endpoint);
+    alert(response)
     let error, token = '';
     let current_userid = 0;
     if (!response.ok){error = "Unexpected error please Try again!"};

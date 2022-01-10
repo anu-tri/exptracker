@@ -37,7 +37,9 @@ export default class App extends Component {
   }
  
   componentDidMount(){
+    alert("app:"+ window.location.hostname )
     this.getAllCats();
+
   }
 
   setToken = (token) => {
