@@ -42,7 +42,6 @@ def create_app(config_class=Config):
     from .blueprints.expense import bp as expense_bp
     app.register_blueprint(expense_bp)
 
-    # return app
+    return app
 
-    if __name__ == "__main__":
-        app.run()
+   
