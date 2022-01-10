@@ -39,11 +39,7 @@ export default class Register extends Component {
         .then(response=>{
             if (response.data){
                 console.log(response.data);
-                this.setState({redirect:true, error:response.error});
-            }
-            else{
-                this.setState({error:response.error});
-                console.log("Error creating user : ", response.error);
+                this.setState({redirect:true});
             }
         })
         .catch(error=>{

@@ -24,7 +24,8 @@ export default class Login extends Component {
         super();
         this.state = {
             error : "",
-            redirect: false
+            redirect: false,
+            categories: []
         };
     }
 
@@ -49,8 +50,8 @@ export default class Login extends Component {
         return "No category"
     }
     
-    handleSubmit = async ({ username, password }) => {
-        const response = await getToken(username, password);
+    handleSubmit =  ({ username, password }) => {
+        const response = getToken(username, password);
         this.setState({ error: response.error });
         this.props.setToken(response.token);
         this.props.setCurrentUserId(response.current_userid);

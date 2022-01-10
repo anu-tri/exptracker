@@ -74,8 +74,8 @@ export default class App extends Component {
     this.setState({userFullName:''});
   }
 
-  getAllCats = async()=>{
-    await axios.get(`https://expense-tracker-tool.herokuapp.com:5000/category`)
+  getAllCats = ()=>{
+    axios.get(`https://expense-tracker-tool.herokuapp.com:5000/category`)
     .then(response=>{
     this.setState({categories:response.data.category}, ()=>console.log("fetched all categories"), console.log(response.data));
     })
