@@ -30,7 +30,9 @@ export default class Register extends Component {
     }
     
     handleSubmit = ({firstname, lastname, username, password}) => {
-         axios.post("https://expense-tracker-tool.herokuapp.com/user", {
+        let baseURL = process.env.REACT_APP_BASE_URL;
+        //  axios.post("https://expense-tracker-tool.herokuapp.com/user", {
+        axios.post(`${baseURL}/login`, {
             firstname:firstname,
             lastname:lastname,
             username:username,
