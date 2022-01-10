@@ -102,7 +102,7 @@ export default class App extends Component {
         let savings = [];
 
         //Budget
-        axios.get(`https://expense-tracker-tool.herokuapp.com/income/user/${localStorage.getItem('currentUserId')}`)
+        axios.get("https://expense-tracker-tool.herokuapp.com/income/user/${localStorage.getItem('currentUserId')}")
         .then(res => {
         for(let i=0; i<res.data.incomes.length; i++)
         {
@@ -110,7 +110,7 @@ export default class App extends Component {
                 budgetdata.splice(months.indexOf(res.data.incomes[i]["month"]),1, res.data.incomes[i]["amount"])
             }
         }
-        localStorage.setItem('expensedata',JSON.stringify(expensedata))
+        localStorage.setItem('budgetdata',JSON.stringify(budgetdata))
         });
 
         //Expenses
