@@ -37,7 +37,7 @@ export default class App extends Component {
   }
  
   componentDidMount(){
-    this.getAllCats();
+    // this.getAllCats();
   }
 
   setToken = (token) => {
