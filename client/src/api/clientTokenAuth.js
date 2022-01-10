@@ -4,7 +4,7 @@ import {create} from "apisauce";
 
 const apiClientWithToken = (token) => create(
     {
-        // baseURL:"",
+        baseURL:"",
         headers:{
             Authorization: "Bearer " + token
         }
