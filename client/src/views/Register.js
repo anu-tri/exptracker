@@ -32,23 +32,23 @@ export default class Register extends Component {
     handleSubmit = ({firstname, lastname, username, password}) => {
         // let baseURL = process.env.REACT_APP_BASE_URL;
         // axios.post(`${window.location.host}/user`, {
-            console.log("in registerr:"+ window.location.hostname )
-        axios.post("https://expense-tracker-tool.herokuapp.com/user", {
-            firstname:firstname,
-            lastname:lastname,
-            username:username,
-            password:password
-        })
-        .then(response=>{
-            if (response.data){
-                console.log(response.data);
-                this.setState({redirect:true});
-            }
-        })
-        .catch(error=>{
-            this.setState({error:response.error});
-            console.log('Error creating user: ', error);
-        })
+        console.log("in registerr:"+ window.location.hostname )
+        // axios.post("https://expense-tracker-tool.herokuapp.com/user", {
+        //     firstname:firstname,
+        //     lastname:lastname,
+        //     username:username,
+        //     password:password
+        // })
+        // .then(response=>{
+        //     if (response.data){
+        //         console.log(response.data);
+        //         this.setState({redirect:true});
+        //     }
+        // })
+        // .catch(error=>{
+        //     this.setState({error:response.error});
+        //     console.log('Error creating user: ', error);
+        // })
     }
 
 
