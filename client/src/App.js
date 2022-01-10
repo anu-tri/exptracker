@@ -37,7 +37,7 @@ export default class App extends Component {
   }
  
   componentDidMount(){
-    alert("app:"+ window.location.hostname )
+    console.log("app:"+ window.location.hostname )
     this.getAllCats();
 
   }
