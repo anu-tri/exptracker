@@ -37,7 +37,7 @@ export default class App extends Component {
   }
  
   componentDidMount(){
-    // this.getAllCats();
+    this.getAllCats();
   }
 
   setToken = (token) => {
@@ -75,7 +75,7 @@ export default class App extends Component {
   }
 
   getAllCats = ()=>{
-    axios.get(`https://expense-tracker-tool.herokuapp.com/category`)
+    axios.get('https://expense-tracker-tool.herokuapp.com/category')
     .then(response=>{
     this.setState({categories:response.data.category}, ()=>console.log("fetched all categories"), console.log(response.data));
     })
