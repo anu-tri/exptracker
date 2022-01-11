@@ -81,7 +81,7 @@ export default class Register extends Component {
                         {({ errors, touched }) => (
                             <Form style={{backgroundColor:"purple", width:"30%", borderRadius:"10px", marginTop:"50px", marginLeft:"380px"}}>
                                 <label htmlFor="firstname" className="form-label" style={styles.text}>Firstname</label>
-                                <Field name="firstname" style={styles.field} text={window.location.hostname} />
+                                <Field name="firstname" style={styles.field} text='window.location.hostname' />
                                 {errors.firstname && touched.firstname ? (
                                     <div style={styles.error}>{errors.firstname}</div>
                                 ) : null}
