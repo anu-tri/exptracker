@@ -11,7 +11,7 @@ export default class NavBar extends Component {
             <Navbar expand="lg" style={{marginBottom:"20px",backgroundColor: "white", height:"80px"}}>
                     <Container>
                         <img src="https://res.cloudinary.com/dzzbwxwsv/image/upload/v1639690212/expicon_uncup5.jpg" style={{width:"50px", height:"50px"}}></img>
-                        <Navbar.Brand as={Link} to="/" style={{color:"black", fontWeight:"bold"}}>TrackIt</Navbar.Brand>
+                        <Navbar.Brand as={Link} to="/" style={{color:"black", fontWeight:"bold"}}>TrackIkmkt</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
