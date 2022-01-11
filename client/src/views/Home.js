@@ -151,7 +151,7 @@ export default class Home extends Component {
                     <div style={{width:"350px", height:"40px", fontSize:"14px", backgroundColor:"#ff3300", color:"white", paddingTop:"10px", paddingLeft:"10px"}}>
                       <b>TrackIt</b>
                     </div>
-                    <p style={{fontSize:"14px", textAlign:"justify", textJustify:"inter-word", padding:"10px",color:"purple"}}><b>TractIt</b> is an Expense Tracker used to analyze and track monthly income and expense data. It is a simple tool to visualize data. It includes charts that will help users to figure out their income, expenses and savings per month.</p>
+                    <p style={{fontSize:"14px", textAlign:"justify", textJustify:"inter-word", padding:"10px",color:"purple"}}><b>TractIt</b> is an Expense Tracker used to analyze and track monthly income and expense data. It is a simple tool to visualize data. It includes charts that will help users to figure out their income, expenses and savings per monthhhhhhhhhh.</p>
                     {/* <div style={{width:"50px",height:"150px", marginLeft:"50px", padding:"10px"}}><ExpenseChartHome /></div><br/> */}
                    
                     <p style={{marginTop:"-8px", color:"#005ce6", marginLeft:"20px"}}><b>Steps to analyze your expenditure</b></p>
