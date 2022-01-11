@@ -25,6 +25,8 @@ export default class Home extends Component {
         };
     }
 
+    // const [expenses, setExpenses] = useState([]);
+
     
     componentDidMount() {
         this.getAllCats();
@@ -42,9 +44,6 @@ export default class Home extends Component {
         await axios.get(`https://expense-tracker-tool.herokuapp.com/expense/user/`+id)
         .then(response=>{
         this.setState({expenses:response.data.expenses}, ()=>console.log("fetched all expenses for the user"));
-        })
-        .catch((error)=>{
-            console.error(error)
         });
     }
 
@@ -53,9 +52,6 @@ export default class Home extends Component {
         await axios.get(`https://expense-tracker-tool.herokuapp.com/expense/category/${id}/user/${this.props.currentUserId}`)
         .then(response => {
             this.setState({expenses:response.data.expenses}, ()=>console.log("fetched all expenses for category."));
-        })
-        .catch((error)=>{
-            console.error(error)
         });
         
     }

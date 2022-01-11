@@ -11,7 +11,8 @@ export default class NavBar extends Component {
             <Navbar expand="lg" style={{marginBottom:"20px",backgroundColor: "white", height:"80px"}}>
                     <Container>
                         <img src="https://res.cloudinary.com/dzzbwxwsv/image/upload/v1639690212/expicon_uncup5.jpg" style={{width:"50px", height:"50px"}}></img>
-                        <Navbar.Brand as={Link} to="/" style={{color:"black", fontWeight:"bold"}}>TrackIkmkt</Navbar.Brand>
+                        {/* /*A64AC9*/ }
+                        <Navbar.Brand as={Link} to="/" style={{color:"black", fontWeight:"bold"}}>TrackIt</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
@@ -19,12 +20,14 @@ export default class NavBar extends Component {
                             <>
                                 <Nav.Link as={Link} to="/" style={{color:"black", fontSize:"16px"}}>Home</Nav.Link>
                                 <Nav.Link as={Link} to="/logout" style={{color:"black", fontSize:"16px"}}>Logout</Nav.Link>
-                                                    
+                    
+
+                                
                                 <NavDropdown title="Category" id="basic-nav-dropdown" className="drop-down-menu" >
                                         <NavDropdown.Item as={Link} to="/createcategory" style={{ color:"#1F77F3"}}>Add Category</NavDropdown.Item>
                                         <NavDropdown.Item as={Link} to="/managecategory" style={{ color:"#1F77F3"}}>Manage Category</NavDropdown.Item>
                                 </NavDropdown>
-                               <NavDropdown title="Expense" id="basic-nav-dropdown" style={{fontColor:"#33ffd6"}}>
+                            <NavDropdown title="Expense" id="basic-nav-dropdown" style={{fontColor:"#33ffd6"}}>
                                     <NavDropdown.Item as={Link} to="/viewexpenses" style={{ color:"#1F77F3"}}>View Expense</NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to="/createexpenses" style={{ color:"#1F77F3"}}>Add Expense</NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to="/manageexpenses" style={{ color:"#1F77F3"}}>Manage Expense</NavDropdown.Item>

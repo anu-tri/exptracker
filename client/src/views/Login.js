@@ -24,8 +24,7 @@ export default class Login extends Component {
         super();
         this.state = {
             error : "",
-            redirect: false,
-            categories: []
+            redirect: false
         };
     }
 
@@ -34,7 +33,7 @@ export default class Login extends Component {
       }
     
     getAllCats = async()=>{
-        await axios.get('https://expense-tracker-tool.herokuapp.com/category')
+        await axios.get(`https://expense-tracker-tool.herokuapp.com/category`)
         .then(response=>{
         this.setState({categories:response.data.category}, ()=>console.log("fetched all categories"), console.log(response.data));
         })
@@ -50,8 +49,8 @@ export default class Login extends Component {
         return "No category"
     }
     
-    handleSubmit =  ({ username, password }) => {
-        const response = getToken(username, password);
+    handleSubmit = async ({ username, password }) => {
+        const response = await getToken(username, password);
         this.setState({ error: response.error });
         this.props.setToken(response.token);
         this.props.setCurrentUserId(response.current_userid);

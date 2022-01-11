@@ -51,7 +51,7 @@ export default class CreateBudget extends Component {
             alert("Please select a month")
             return
         }
-               
+       
         for(let i=0; i<this.state.incomes.length;i++){
             if(this.state.incomes[i].month === this.state.month){
                 alert("Budget for this month already exists. Please modify it.")

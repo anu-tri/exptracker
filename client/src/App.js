@@ -8,7 +8,6 @@ import axios from 'axios';
 import Login from "./views/Login";
 import Logout from "./views/Logout";
 import Register from "./views/Register";
-import Footer from "./components/Footer"
 import Home from "./views/Home";
 import CreateCats from "./views/CreateCats";
 import ManageCats from "./views/ManageCats";
@@ -52,7 +51,7 @@ export default class App extends Component {
 
   setUserName = (username) => {
     let fullname = "";
-    fetch("https://expense-tracker-tool.herokuapp.com/user")
+    fetch('https://expense-tracker-tool.herokuapp.com/user')
     .then(response=>response.json())
     .then(response=>{
       for(let user of response.users){
@@ -74,8 +73,8 @@ export default class App extends Component {
     this.setState({userFullName:''});
   }
 
-  getAllCats = ()=>{
-    axios.get("https://expense-tracker-tool.herokuapp.com/category")
+  getAllCats = async()=>{
+    await axios.get('https://expense-tracker-tool.herokuapp.com/category')
     .then(response=>{
     this.setState({categories:response.data.category}, ()=>console.log("fetched all categories"), console.log(response.data));
     })
@@ -102,7 +101,7 @@ export default class App extends Component {
         let savings = [];
 
         //Budget
-        axios.get("https://expense-tracker-tool.herokuapp.com/income/user/${localStorage.getItem('currentUserId')}")
+        axios.get(`https://expense-tracker-tool.herokuapp.com/income/user/${localStorage.getItem('currentUserId')}`)
         .then(res => {
         for(let i=0; i<res.data.incomes.length; i++)
         {
@@ -110,11 +109,11 @@ export default class App extends Component {
                 budgetdata.splice(months.indexOf(res.data.incomes[i]["month"]),1, res.data.incomes[i]["amount"])
             }
         }
-        localStorage.setItem('budgetdata',JSON.stringify(budgetdata))
+        localStorage.setItem('expensedata',JSON.stringify(expensedata))
         });
 
         //Expenses
-        axios.get("https://expense-tracker-tool.herokuapp.com/expense/user/${localStorage.getItem('currentUserId')}")
+        axios.get(`https://expense-tracker-tool.herokuapp.com/expense/user/${localStorage.getItem('currentUserId')}`)
         .then(res => {
         //Sum of amount for a specific month(i.e getting sum of amount for all jan,...)  
         const result = Array.from(res.data.expenses.reduce(
@@ -145,7 +144,7 @@ export default class App extends Component {
   
   setPieChartData=()=>{
       //Expenses
-      axios.get("https://expense-tracker-tool.herokuapp.com/expense/user/${localStorage.getItem('currentUserId')}")
+      axios.get(`https://expense-tracker-tool.herokuapp.com/expense/user/${localStorage.getItem('currentUserId')}`)
       .then(res => {
     
       //Sum of amount for a specific category(i.e getting sum of amount for a category,...)  

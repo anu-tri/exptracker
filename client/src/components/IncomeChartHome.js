@@ -60,6 +60,7 @@ export default class IncomeChartHome extends Component {
     expensedatachart = JSON.parse(localStorage.getItem('expensedata'))
 
     if ((budgetdatachart != null ) && (expensedatachart != null )) {
+      // alert("innNNNNNN")
       for(let i = 0;i<=budgetdatachart.length-1;i++){
         savings.push((budgetdatachart[i]) - (expensedatachart[i]));
       }
